@@ -6,15 +6,12 @@ using UnityEngine;
      */
 public class Vision : MonoBehaviour
 {
-    Transform player;
 
-    void Start()
-    {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
-    }
+    Vector3 destination;
 
     void Update()
     {
-        transform.LookAt(player);
+        destination = transform.parent.GetComponent<EnemyStates>().navMeshAgent.destination;
+        transform.LookAt(destination);
     }
 }

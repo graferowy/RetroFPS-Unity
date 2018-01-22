@@ -1462,7 +1462,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1696153074
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1855,7 +1855,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &1916997215
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2005,6 +2005,7 @@ MonoBehaviour:
   shootRange: 14
   vision: {fileID: 1646439265}
   stayAlertTime: 3
+  viewAngle: 120
   missile: {fileID: 1379329585250740, guid: d8414fa23178cbe43b86324a98ff2b9b, type: 2}
   missileDamage: 5
   missileSpeed: 5

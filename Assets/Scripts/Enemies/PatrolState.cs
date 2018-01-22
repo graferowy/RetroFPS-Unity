@@ -21,15 +21,10 @@ public class PatrolState : IEnemyAI
     // Gdy przeciwnik zauwazy bohatera przechodzi do stanu gonitwy
     void Watch()
     {
-        RaycastHit hit;
-        if(Physics.Raycast(enemy.transform.position, -enemy.transform.forward, out hit, enemy.patrolRange))
+        if(enemy.EnemySpotted())
         {
-            if (hit.collider.CompareTag("Player"))
-            {
-                Debug.Log("Zauważyłem wroga!");
-                enemy.chaseTarget = hit.transform;
-                ToChaseState();
-            }
+            Debug.Log("Zauwazylem wroga!");
+            ToChaseState();
         }
     }
     // Funkcja odpowiadająca za patrolowanie wzdłuż wyznaczonych punktów

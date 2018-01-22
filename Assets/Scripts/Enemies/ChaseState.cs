@@ -21,13 +21,7 @@ public class ChaseState : IEnemyAI
     // Gdy przeciwnik zgubi gracza z oczu przechodzimy do stanu zaalarmowania
     void Watch()
     {
-        RaycastHit hit;
-        if (Physics.Raycast(enemy.transform.position, enemy.vision.forward, out hit, enemy.patrolRange, enemy.raycastMask)
-            && hit.collider.CompareTag("Player"))
-        {
-            enemy.chaseTarget = hit.transform;
-            enemy.lastKnownPosition = hit.transform.position;
-        } else
+        if(!enemy.EnemySpotted())
         {
             ToAlertState();
         }

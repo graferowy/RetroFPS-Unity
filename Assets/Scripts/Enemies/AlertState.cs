@@ -25,12 +25,9 @@ public class AlertState : IEnemyAI
     // I przechodzi do stanu 'gonitwy'
     void Watch()
     {
-        RaycastHit hit;
-        if (Physics.Raycast(enemy.transform.position, enemy.vision.forward, out hit, enemy.patrolRange)
-            && hit.collider.CompareTag("Player"))
+        if(enemy.EnemySpotted())
         {
-            enemy.chaseTarget = hit.transform;
-            enemy.navMeshAgent.destination = hit.transform.position;
+            enemy.navMeshAgent.destination = enemy.lastKnownPosition;
             ToChaseState();
         }
     }
