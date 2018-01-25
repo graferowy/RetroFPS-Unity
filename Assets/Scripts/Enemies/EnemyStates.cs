@@ -76,6 +76,9 @@ public class EnemyStates : MonoBehaviour
         currentState = alertState;
     }
 
+    // Funkcja oblicza relatywną pozycję gracza względem przeciwnika oraz kąt pomiędzy tym wektorem
+    // A kierunkiem patrzenia przeciwnika. Jeśli przeciwnik widzi bohatera zmienia cel i ostatnio znaną pozycję
+    // Oraz zwraca wartość "true". W przeciwnym wypadku tylko zwraca wartość "false"
     public bool EnemySpotted()
     {
         Vector3 direction = GameObject.FindWithTag("Player").transform.position - transform.position;

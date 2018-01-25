@@ -1849,6 +1849,8 @@ GameObject:
   - component: {fileID: 1916997220}
   - component: {fileID: 1916997221}
   - component: {fileID: 1916997222}
+  - component: {fileID: 1916997224}
+  - component: {fileID: 1916997223}
   m_Layer: 9
   m_Name: Skull Monster
   m_TagString: Enemy
@@ -2018,6 +2020,41 @@ MonoBehaviour:
   navMeshAgent: {fileID: 0}
   chaseTarget: {fileID: 0}
   lastKnownPosition: {x: 0, y: 0, z: 0}
+--- !u!114 &1916997223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1916997214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4723768321c58f04d825adf7f94654f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprites: []
+  animStates:
+  - Forward
+  - Backward
+  - Right
+  - Left
+  isAnimated: 1
+--- !u!95 &1916997224
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1916997214}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f507851dc192f694abcdc5c68f0b67b8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &2035442650
 GameObject:
   m_ObjectHideFlags: 0
