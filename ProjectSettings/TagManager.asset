@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
+  - HpBonus
+  - AmmoBonus
+  - ArmorBonus
   layers:
   - Default
   - TransparentFX

@@ -9,6 +9,8 @@ public class PlayerMovement : MonoBehaviour {
     public float playerRunningSpeed = 15f;
     public float jumpStrength = 20f;
     public float verticalRotationLimit = 80f;
+    public AudioClip pickupSound;
+    public FlashScreen flash;
 
     float forwardMovement;
     float sidewaysMovement;
@@ -17,10 +19,12 @@ public class PlayerMovement : MonoBehaviour {
 
     float verticalRotation = 0;
     CharacterController cc;
+    AudioSource source;
 
     void Awake()
     {
         cc = GetComponent<CharacterController>();
+        source = GetComponent<AudioSource>();
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
     }
@@ -75,5 +79,26 @@ public class PlayerMovement : MonoBehaviour {
         Vector3 playerMovement = new Vector3(sidewaysMovement, verticalVelocity, forwardMovement);
         //Poruszanie bohaterem
         cc.Move(transform.rotation * playerMovement * Time.deltaTime);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.CompareTag("HpBonus"))
+        {
+            GetComponent<PlayerHealth>().AddHealth(20);
+        } else if (other.CompareTag("ArmorBonus"))
+        {
+            GetComponent<PlayerHealth>().AddArmor(50);
+        } else if (other.CompareTag("AmmoBonus"))
+        {
+            transform.Find("Weapons").Find("PistolHand").GetComponent<Pistol>().AddAmmo(15);
+        }
+
+        if(other.CompareTag("HpBonus") || other.CompareTag("ArmorBonus") || other.CompareTag("AmmoBonus"))
+        {
+            flash.PickedUpBonus();
+            source.PlayOneShot(pickupSound);
+            Destroy(other.gameObject);
+        }
     }
 }

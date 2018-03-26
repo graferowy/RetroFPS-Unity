@@ -12,6 +12,9 @@ public class Enemy : MonoBehaviour
     NavMeshAgent nma;
     SpriteRenderer sr;
     BoxCollider bc;
+    GameObject vision;
+    DynamicBillboardChange dbc;
+    Animator anim;
 
     private void Start()
     {

@@ -139,4 +139,9 @@ public class Pistol : MonoBehaviour
         GetComponent<SpriteRenderer>().sprite = idlePistol;
     }
 
+    public void AddAmmo(int value)
+    {
+        ammoLeft += value;
+    }
+
 }
