@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4823096513500986}
   - component: {fileID: 212126178076125394}
+  - component: {fileID: 114902446321780908}
   m_Layer: 0
   m_Name: heart
   m_TagString: Untagged
@@ -148,6 +149,17 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &114902446321780908
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1316907341031056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8f47674915791740bf298250f06f8b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212126178076125394
 SpriteRenderer:
   m_ObjectHideFlags: 1
